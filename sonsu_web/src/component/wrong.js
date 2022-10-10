@@ -5,19 +5,12 @@ import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import Header from './header'
 import { HeaderDiv } from '../component_css/Home_style';
-import { Myheader } from './../component_css/Mypage_style';
-import { FadeHome } from '../component_css/Home_style';
-import { MediaDiv } from '../component_css/Study_style';
 import {
     WrongTitle,
     WrongDiv,
     WrongContent,
+    Wrongcalendar,
     WrongText,
-    WrongList,
-    WrongListContent,
-    WrongDay,
-    WrongBtn,
-
 } from '../component_css/Wrong_style';
 // import { Toolbar } from '@material-ui/core';
 import Toolbar from './Toolbar';
@@ -35,71 +28,37 @@ const Wrong = () => {
 
     return (
         <>
-            {/* <Myheader> */}
-                <HeaderDiv>
-                    <Header/>
-                </HeaderDiv>
-            {/* </Myheader> */}
-            <MediaDiv>
-                <FadeHome>
-                    <WrongDiv>
-                        <WrongTitle>
-                            <img src='img/bar.png' alt="image"/>
-                            <WrongText>
-                                오답노트
-                            </WrongText>
-                        </WrongTitle>
-                        <WrongContent>
-                            <WrongList>
-                                <WrongListContent>
-                                    <WrongDay>
-                                        10월 29일
-                                    </WrongDay>
-                                    <Link to={"/wrong_repeat"} style={{ textDecoration: 'none' }}>
-                                        <WrongBtn>
-                                            초급
-                                        </WrongBtn>
-                                    </Link>
-                                    <WrongBtn>
-                                        중급
-                                    </WrongBtn>
-                                    <WrongBtn>
-                                        고급
-                                    </WrongBtn>
-                                </WrongListContent>
-                                <WrongListContent>
-                                    <WrongDay>
-                                        10월 29일
-                                    </WrongDay>
-                                    <WrongBtn>
-                                        초급
-                                    </WrongBtn>
-                                    <WrongBtn>
-                                        중급
-                                    </WrongBtn>
-                                    <WrongBtn>
-                                        고급
-                                    </WrongBtn>
-                                </WrongListContent>
-                                <WrongListContent>
-                                    <WrongDay>
-                                        10월 29일
-                                    </WrongDay>
-                                    <WrongBtn>
-                                        초급
-                                    </WrongBtn>
-                                    <WrongBtn>
-                                        중급
-                                    </WrongBtn>
-                                    <WrongBtn>
-                                        고급
-                                    </WrongBtn>
-                                </WrongListContent>
-                            </WrongList>
-                        </WrongContent>
-                    </WrongDiv>
-                </FadeHome>
-            </MediaDiv>
+            <HeaderDiv>
+                <Header/>
+            </HeaderDiv>
+            <WrongDiv>
+                <WrongTitle>
+                    <img src='img/bar.png' alt="image"/>
+                    <WrongText>
+                        오답노트
+                    </WrongText>
+                </WrongTitle>
+                <WrongContent>
+                    <Wrongcalendar>
+                        <Calendar
+                            onChange={onChange}
+                            value={value}   // 
+                            localizer={localizer}
+                            // events={events} // 캘린더 내의 일자별 일정추가 기능
+                            // style={{ height: 500 }}
+                            // step={60}
+                            // views={allViews}
+                            // defaultDate={new Date(2015, 3, 1)}
+                            components={{
+                                toolbar: Toolbar,
+                            }}
+                        />
+                        <div className="text-gray-500 mt-4">
+                            {moment(value).format("YYYY년 MM월 DD일")} 
+                        </div>
+                    </Wrongcalendar>
+                </WrongContent>
+            </WrongDiv>
         </>
     )
 }

@@ -50,15 +50,3 @@ export const ChartDivB=styled.div`
     margin-top: 40px;
     margin-bottom: 100px;
 `
-
-export const ChartDivC=styled.div`
-    border-radius: 12px;
-    border: 1px solid #D9D9D9;
-    background: white;
-    color:black;
-    font-size: 16px;
-    // font-family: 'Spoqa Han Sans Neo', 'sans-serif';
-    padding: 60px 100px 30px 100px; 
-    margin-top: 40px;
-    margin-bottom: 160px;
-`

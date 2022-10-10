@@ -25,6 +25,7 @@ import {
     MyBtn,
     Process,
     ChartBox,
+    Circle,
     Chartcontain,
     PCAcontent,
     PCAprofile,
@@ -95,14 +96,14 @@ const Mypage = () => {
 
     return (
         <>
-            {/* <Myheader> */}
+            <Myheader>
                 <HeaderDiv>
                     <Header/>
                 </HeaderDiv>
-            {/* </Myheader> */}
+            </Myheader>
             <MediaDiv>
                 <FadeHome>
-                {/* {Users && Users.map((obj)=>(    */}
+                {Users && Users.map((obj)=>(   
                         <MypageDiv>
                             <Profilecontain>
                                 <PCA>
@@ -115,9 +116,9 @@ const Mypage = () => {
                                     <PCAprofile>
                                         <Profileimg></Profileimg>
                                         <PCAcontent>
-                                            {/* <Profilename> {obj.userName} </Profilename>
+                                            <Profilename> {obj.userName} </Profilename>
                                             <Profileemail> {obj.email} </Profileemail>
-                                            <Profiledate> 손수와 함께한지 {obj.withDate}일째 </Profiledate> */}
+                                            <Profiledate> 손수와 함께한지 {obj.withDate}일째 </Profiledate>
                                         </PCAcontent>
                                     </PCAprofile>
                                 </PCA>
@@ -129,10 +130,10 @@ const Mypage = () => {
                                         </ProfileText>
                                     </Going>
                                     <Link to={"/grade"} style={{ textDecoration: 'none' }}>
-                                        <MyBtn><img src="img/gograde.png" alt="image" /></MyBtn>
+                                        <MyBtn><Circle></Circle> 성적표 </MyBtn>
                                     </Link>
                                     <Link to={"/wrong"} style={{ textDecoration: 'none' }}>
-                                        <MyBtn><img src="img/gowrong.png" alt="image"/></MyBtn>
+                                        <MyBtn><Circle></Circle> 오답노트 </MyBtn>
                                     </Link>
                                 </PCB>
                             </Profilecontain>
@@ -161,8 +162,8 @@ const Mypage = () => {
                                 </ChartBox>
                             </Chartcontain>
                         </MypageDiv>
-                    {/* )
-                    )} */}
+                    )
+                    )} 
                 </FadeHome>
             </MediaDiv>
             {/* <Chart options={options} series={series} type="radialBar" height="50" /> */}

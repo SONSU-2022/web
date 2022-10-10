@@ -5,7 +5,6 @@ import Header from "./component/header";
 import Home from "./component/home";
 import Mypage from "./component/mypage";
 import Wrong from "./component/wrong";
-import WrongRepeat from "./component/wrong_repeat";
 import Grade from "./component/grade";
 import TestHome from './component/TestHome';
 import Test from './component/Test';
@@ -42,7 +41,6 @@ function App() {
               <Route exact path="mypage" element={<Mypage />} />
               {/* 오답노트 */}
               <Route exact path="wrong" element={<Wrong />} />
-              <Route exact path="wrong_repeat" element={<WrongRepeat />} />
               {/* 성적표 */}
               <Route exact path="grade" element={<Grade />} />
               {/* 수강하기 */}

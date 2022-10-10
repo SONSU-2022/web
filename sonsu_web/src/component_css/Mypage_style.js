@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Myheader=styled.div`
-    background-color: #FF7A00;    
 
 `
 
@@ -105,12 +104,30 @@ export const Going=styled.div`
 `
 
 
-export const MyBtn=styled.div`
-    width: 410px;
-    height: 75px;
+export const MyBtn=styled.button`
+    background: #FF7A00;
+    border-radius: 12px;
+    border: 1px solid #D9D9D9;
+    background: white;
+    color:black;
+    width: 250px;
+    height: 45px;
+    font-size: 16px;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    padding: 10px;
+    margin-top: 30px;
+    text-align: left;
     display: flex;
     flex-direction: row;
-    // align-items: flex-start;
+    align-items: flex-start;
+`
+
+export const Circle=styled.div`
+    width: 20px;
+    height: 20px;
+    background: #D9D9D9;
+    border-radius: 50%;
+    margin-right: 10px;
 `
 
 export const Chartcontain=styled.div`

@@ -1,11 +1,8 @@
 import React,{useCallback, useState,useEffect} from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import Chart1 from "./chart/grade_chart_1";
-import Chart2 from "./chart/grade_chart_2";
-import Chart3 from "./chart/grade_chart_3";
+import Chart from "./chart/chart2";
 import axios from 'axios';
 import Header from './header'
-import { Myheader } from './../component_css/Mypage_style';
 import {
     GradeDiv,
     GradeTitle,
@@ -13,7 +10,6 @@ import {
     GradeChart,
     ChartDivA,
     ChartDivB,
-    ChartDivC,
 } from './../component_css/Grade_style';
 import { 
     MediaDiv,
@@ -32,34 +28,42 @@ const Grade = (props) => {
 
     const level_name = Level_Arr.curri_arr;
 
-    // const [cur_curri,setCurri] = useState(level_name[0]);
+    const [cur_curri,setCurri] = useState(level_name[0]);
+
+    //서버
+    const [Curris,setCurris] = useState();
+
+    //서버에게서 데이터 받아오기
+    useEffect(()=>{
+        axios.get(`/study/${encodeURIComponent(cur_curri)}`)
+        .then((response)=>{
+            console.log(response.data.data);
+            setCurris(response.data.data);
+        })
+
+    }, [cur_curri])
 
     return (
         <>
-            {/* <Myheader> */}
-                <HeaderDiv>
-                    <Header/>
-                </HeaderDiv>
-            {/* </Myheader> */}
+            <HeaderDiv>
+                <Header/>
+            </HeaderDiv>
             <MediaDiv>
                 <GradeDiv>
                     <GradeTitle>성적표</GradeTitle>
                     <GradeLevel>
-                        {/* {level_name.map(i => (                    
+                        {level_name.map(i => (                    
                             <Curri onClick={()=> {setCurri(i)}}>{i}</Curri>                
                         )
-                        )} */}
+                        )}
                     </GradeLevel>
                     <GradeChart>
                         <ChartDivA>
-                            <Chart1/>
+                            <Chart/>
                         </ChartDivA>
                         <ChartDivB>
-                            <Chart2/>
+                            <Chart/>
                         </ChartDivB>
-                        <ChartDivC>
-                            <Chart3/>
-                        </ChartDivC>
                     </GradeChart>
                 </GradeDiv>
             </MediaDiv>
